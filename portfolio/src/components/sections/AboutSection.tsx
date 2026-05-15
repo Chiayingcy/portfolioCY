@@ -1,14 +1,16 @@
-﻿import { FadeUp } from '@/components/ui/FadeUp'
+﻿import { MapPin, Briefcase, Calendar, Mail, Phone, TrendingUp } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import { FadeUp } from '@/components/ui/FadeUp'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { SKILL_GROUPS } from '@/data'
 
-const FACTS = [
-  { k: 'Location', v: 'Puchong, Selangor, Malaysia' },
-  { k: 'Current role', v: 'Junior Full Stack Dev · Masverse Technologies' },
-  { k: 'Since', v: 'April 2024 · Present' },
-  { k: 'Email', v: 'claws2627@gmail.com' },
-  { k: 'Phone', v: '+6019-5747073' },
-  { k: 'Trading', v: 'XAUUSD · EURUSD · GBPUSD · FundingPips · AlphaCapital' },
+const FACTS: { icon: LucideIcon; k: string; v: string }[] = [
+  { icon: MapPin,     k: 'Location',     v: 'Puchong, Selangor, Malaysia' },
+  { icon: Briefcase,  k: 'Current role', v: 'Junior Full Stack Dev · Masverse Technologies' },
+  { icon: Calendar,   k: 'Since',        v: 'April 2024 · Present' },
+  { icon: Mail,       k: 'Email',        v: 'claws2627@gmail.com' },
+  { icon: Phone,      k: 'Phone',        v: '+6019-5747073' },
+  { icon: TrendingUp, k: 'Trading',      v: 'XAUUSD · EURUSD · GBPUSD · FundingPips · AlphaCapital' },
 ]
 
 const TIER_STYLES: Record<string, string> = {
@@ -43,9 +45,12 @@ export function AboutSection() {
             </p>
 
             <div className="divide-y divide-ink/10">
-              {FACTS.map(({ k, v }) => (
+              {FACTS.map(({ icon: Icon, k, v }) => (
               <div key={k} className="flex items-start gap-4 py-3">
-                <span className="w-[96px] shrink-0 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">{k}</span>
+                <span className="flex w-[116px] shrink-0 items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                  <Icon size={11} strokeWidth={2} className="shrink-0" />
+                  {k}
+                </span>
                 <span className="text-[13px] text-ink md:text-[14px]">{v}</span>
               </div>
               ))}

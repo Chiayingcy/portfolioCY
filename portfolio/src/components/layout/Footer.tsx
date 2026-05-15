@@ -5,7 +5,7 @@ export function Footer() {
       <div className="container-shell py-10">
         <div className="glass-card flex flex-col items-center justify-between gap-4 p-6 text-center md:flex-row md:text-left">
           <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
-            Â© 2026 Chia Ying Ooi · Full Stack Developer · Puchong, Selangor
+            © 2026 Chia Ying Ooi · Full Stack Developer · Puchong, Selangor
           </p>
           <a
             href="mailto:claws2627@gmail.com"
