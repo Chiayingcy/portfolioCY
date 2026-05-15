@@ -97,7 +97,7 @@ export function ProjectsSection() {
                 <ul className="mb-4 space-y-1.5">
                   {project.highlights.map((h, j) => (
                     <li key={j} className="relative pl-3 text-[12px] text-ink2 md:text-[13px]">
-                      <span className="absolute left-0 top-[2px] text-[10px] text-accent">â†’</span>
+                      <span className="absolute left-0 top-[2px] text-[10px] text-accent">→</span>
                       {h}
                     </li>
                   ))}
@@ -106,13 +106,13 @@ export function ProjectsSection() {
 
               {project.outcomes && project.outcomes.length > 0 && (
                 <div className="mb-4 rounded-xl border border-emerald-500/25 bg-emerald-500/10 p-3">
-                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-emerald-700">
+                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-emerald-700 dark:text-emerald-400">
                     Business outcomes
                   </p>
                   <ul className="space-y-1">
                     {project.outcomes.map((outcome) => (
                       <li key={outcome} className="relative pl-3 text-[12px] text-ink2 md:text-[13px]">
-                        <span className="absolute left-0 top-[2px] text-emerald-700">•</span>
+                        <span className="absolute left-0 top-[2px] text-emerald-700 dark:text-emerald-400">•</span>
                         {outcome}
                       </li>
                     ))}
@@ -121,11 +121,14 @@ export function ProjectsSection() {
               )}
 
               {project.architecture && project.architecture.length > 0 && (
-                <details className="mb-4 rounded-xl border border-ink/12 bg-white/70 p-3">
-                  <summary className="cursor-pointer list-none font-mono text-[10px] uppercase tracking-[0.12em] text-ink">
-                    TECH deep dive
+                <details className="group mb-4 rounded-xl border border-ink/12 bg-white/70 dark:bg-surface/40">
+                  <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink">Tech deep dive</span>
+                    <span className="ml-3 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-ink/20 font-mono text-[11px] text-ink/60 transition-transform duration-200 group-open:rotate-45">
+                      +
+                    </span>
                   </summary>
-                  <ul className="mt-3 space-y-1.5 border-t border-ink/10 pt-3">
+                  <ul className="space-y-1.5 border-t border-ink/10 px-4 pb-3 pt-3">
                     {project.architecture.map((item) => (
                       <li key={item} className="relative pl-3 text-[12px] text-ink2 md:text-[13px]">
                         <span className="absolute left-0 top-[2px] text-accent">•</span>
@@ -138,22 +141,34 @@ export function ProjectsSection() {
 
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full border border-ink/15 bg-white px-3 py-1 font-mono text-[10px] uppercase tracking-[0.08em] text-muted">
+                  <span key={tag} className="rounded-full border border-ink/15 bg-white dark:bg-surface/25 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.08em] text-muted">
                     {tag}
                   </span>
                 ))}
               </div>
 
-              {project.github && (
-                <div className="mt-4 border-t border-ink/10 pt-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted transition-colors hover:text-accent"
-                  >
-                    <span>&#128279;</span> View on GitHub
-                  </a>
+              {(project.link || project.github) && (
+                <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-ink/10 pt-4">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-accent transition-colors hover:text-accent-light"
+                    >
+                      <span>&#127758;</span> Visit Site
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted transition-colors hover:text-accent"
+                    >
+                      <span>&#128279;</span> View on GitHub
+                    </a>
+                  )}
                 </div>
               )}
             </div>

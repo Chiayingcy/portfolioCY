@@ -139,6 +139,7 @@ export const PROJECTS: Project[] = [
       'MySQL queries optimised with proper joins and indexes on high-traffic pages',
     ],
     tags: ['Laravel', 'Vue.js', 'Maschain', 'MySQL', 'Docker'],
+    link: 'https://mykapital.my/',
   },
   {
     id: 'bcc',
@@ -164,6 +165,7 @@ export const PROJECTS: Project[] = [
       'Blockchain hash verification so any certificate can be independently checked',
     ],
     tags: ['React', 'Laravel', 'Maschain', 'Blockchain'],
+    link: 'https://www.blockchaincert.my/',
   },
   {
     id: 'tradebotx',
