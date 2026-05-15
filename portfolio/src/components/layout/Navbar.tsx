@@ -32,9 +32,9 @@ export function Navbar() {
             : 'border-white/50 bg-white/62 backdrop-blur-md dark:border-ink/10 dark:bg-surface/72'
         )}
       >
-      <div className="font-display text-lg font-semibold tracking-tight text-ink">
+      <a href="#" className="font-display text-lg font-semibold tracking-tight text-ink transition-opacity hover:opacity-70">
         claws<span className="text-accent">.dev</span>
-      </div>
+      </a>
 
       <div className="hidden items-center gap-6 lg:flex">
         {NAV_ITEMS.map((item) => (
