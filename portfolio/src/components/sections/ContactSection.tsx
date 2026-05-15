@@ -31,14 +31,14 @@ export function ContactSection() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="mailto:claws2627@gmail.com?subject=Interview%20Invitation"
-                className="rounded-full bg-ink px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-white transition-colors hover:bg-accent"
+                className="rounded-full bg-ink px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-white transition-colors hover:bg-accent dark:bg-accent dark:hover:bg-accent-light"
               >
                 Schedule Interview
               </a>
               <a
                 href="/resume.pdf"
                 download="ChiaYingOoi_Resume.pdf"
-                className="rounded-full border border-ink/20 bg-white px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent/40 hover:text-accent"
+                className="rounded-full border border-ink/20 bg-white px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent/40 hover:text-accent dark:bg-surface/25 dark:border-ink/20 dark:hover:border-accent/50"
               >
                 Download Resume
               </a>
@@ -46,7 +46,7 @@ export function ContactSection() {
                 href="https://www.linkedin.com/in/ooi-chia-ying-9ba7031b7/"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-ink/20 bg-white px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent/40 hover:text-accent"
+                className="rounded-full border border-ink/20 bg-white px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent/40 hover:text-accent dark:bg-surface/25 dark:border-ink/20 dark:hover:border-accent/50"
               >
                 Connect on LinkedIn
               </a>

@@ -31,7 +31,7 @@ export function ExperienceSection() {
                 </ul>
                 <div className="flex flex-wrap gap-2">
                   {exp.tags.map((tag) => (
-                    <span key={tag} className="rounded-full border border-ink/15 bg-white/80 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.08em] text-muted">
+                    <span key={tag} className="rounded-full border border-ink/15 bg-white/80 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.08em] text-muted dark:bg-surface/28 dark:border-ink/15">
                       {tag}
                     </span>
                   ))}

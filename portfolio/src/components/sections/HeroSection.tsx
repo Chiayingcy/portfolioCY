@@ -30,7 +30,7 @@ export function HeroSection() {
             <div className="mb-5 flex flex-wrap items-center gap-2">
               <span className="chip">Full Stack Developer</span>
               <span className="chip">Puchong, Selangor, MY</span>
-              <span className="chip border-emerald-500/30 bg-emerald-500/10 text-emerald-700">Open to Opportunities</span>
+              <span className="chip border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400">Open to Opportunities</span>
             </div>
 
             <h1 className="mb-5 font-display text-[clamp(2.6rem,8vw,6.2rem)] font-semibold leading-[0.9] tracking-tight text-ink">
@@ -46,19 +46,19 @@ export function HeroSection() {
             <div className="mb-8 flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="rounded-full bg-ink px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent"
+                className="rounded-full bg-ink px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent dark:bg-accent dark:hover:bg-accent-light"
               >
                 Let's Collaborate
               </a>
               <a
                 href="#projects"
-                className="rounded-full border border-ink/20 bg-white px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
+                className="rounded-full border border-ink/20 bg-white px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent dark:bg-surface/25 dark:border-ink/20 dark:hover:border-accent/50"
               >
                 See Project Highlights
               </a>
               <a
                 href="mailto:claws2627@gmail.com"
-                className="rounded-full border border-ink/20 bg-white px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-ink/35"
+                className="rounded-full border border-ink/20 bg-white px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-ink/35 dark:bg-surface/25 dark:border-ink/20"
               >
                 Email Me
               </a>

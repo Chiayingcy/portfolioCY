@@ -46,7 +46,7 @@ export function ProjectsSection() {
             href="https://github.com/Chiayingcy"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-ink/20 bg-white px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
+            className="rounded-full border border-ink/20 bg-white px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent dark:bg-surface/25 dark:border-ink/20 dark:hover:border-accent/50"
           >
             &#128279; View GitHub Profile
           </a>
@@ -54,7 +54,7 @@ export function ProjectsSection() {
       </FadeUp>
 
       <FadeUp delay={50}>
-        <div className="mb-8 flex w-fit flex-wrap gap-1 rounded-2xl border border-white/70 bg-white/70 p-1.5 shadow-[0_8px_22px_rgba(16,32,61,0.08)]">
+        <div className="mb-8 flex w-fit flex-wrap gap-1 rounded-2xl border border-white/70 bg-white/70 p-1.5 shadow-[0_8px_22px_rgba(16,32,61,0.08)] dark:border-ink/12 dark:bg-surface/35 dark:shadow-[0_8px_22px_rgba(0,0,0,0.30)]">
           {FILTER_TABS.map((tab) => (
             <button
               key={tab.value}
@@ -62,7 +62,7 @@ export function ProjectsSection() {
               className={cn(
                 'rounded-xl px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] transition-all duration-200',
                 filter === tab.value
-                  ? 'bg-ink text-white shadow-sm'
+                  ? 'bg-ink text-white shadow-sm dark:bg-accent'
                   : 'text-muted hover:text-ink'
               )}
             >
@@ -123,7 +123,7 @@ export function ProjectsSection() {
               {project.architecture && project.architecture.length > 0 && (
                 <details className="mb-4 rounded-xl border border-ink/12 bg-white/70 p-3">
                   <summary className="cursor-pointer list-none font-mono text-[10px] uppercase tracking-[0.12em] text-ink">
-                    CTO deep dive
+                    TECH deep dive
                   </summary>
                   <ul className="mt-3 space-y-1.5 border-t border-ink/10 pt-3">
                     {project.architecture.map((item) => (

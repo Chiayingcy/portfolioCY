@@ -7,7 +7,7 @@ export function IdentityCard() {
         <div className="absolute -left-8 -top-8 h-28 w-28 rounded-full bg-accent/25 blur-2xl" />
         <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-blue-500/25 blur-2xl" />
 
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(16,32,61,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(16,32,61,0.06)_1px,transparent_1px)] bg-[size:28px_28px]" />
+        <div className="identity-grid absolute inset-0" />
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center">
           <span className="chip mb-5">Product Builder</span>
@@ -16,7 +16,7 @@ export function IdentityCard() {
             <svg className="absolute inset-0 animate-spin-slow" viewBox="0 0 96 96" fill="none">
               <circle cx="48" cy="48" r="44" stroke="#ff6b35" strokeWidth="1.5" strokeDasharray="10 6" opacity="0.5" />
             </svg>
-            <div className="absolute inset-2 flex items-center justify-center rounded-full border border-ink/15 bg-white/80">
+            <div className="absolute inset-2 flex items-center justify-center rounded-full border border-ink/15 bg-white/80 dark:bg-white/12 dark:border-white/20">
               <span
                 className="font-display text-3xl font-semibold leading-none"
                 style={{ background: 'linear-gradient(135deg, #ff6b35, #4f78ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}

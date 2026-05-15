@@ -11,25 +11,27 @@ const config: Config = {
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
+        // All colors reference CSS variables so light/dark themes auto-switch.
+        // Variables are space-separated RGB channels to support Tailwind opacity modifiers.
         bg: {
-          DEFAULT: '#f5f2ee',
-          2: '#edeae4',
-          3: '#e4e0d8',
-          dark: '#0e1018',
-          dark2: '#14161e',
-          dark3: '#1e2230',
+          DEFAULT: 'rgb(var(--color-bg) / <alpha-value>)',
+          2: 'rgb(var(--color-bg2) / <alpha-value>)',
+          3: 'rgb(var(--color-bg3) / <alpha-value>)',
         },
         ink: {
-          DEFAULT: '#1a1714',
-          2: '#3d3830',
+          DEFAULT: 'rgb(var(--color-ink) / <alpha-value>)',
+          2: 'rgb(var(--color-ink2) / <alpha-value>)',
         },
         accent: {
-          DEFAULT: '#c8622a',
-          light: '#e8924a',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          light: 'rgb(var(--color-accent-light) / <alpha-value>)',
         },
         muted: {
-          DEFAULT: '#8a8278',
-          2: '#b5b0a8',
+          DEFAULT: 'rgb(var(--color-muted) / <alpha-value>)',
+          2: 'rgb(var(--color-muted2) / <alpha-value>)',
+        },
+        surface: {
+          DEFAULT: 'rgb(var(--color-surface) / <alpha-value>)',
         },
         trading: '#b8860b',
       },

@@ -10,7 +10,7 @@ export function Footer() {
           </p>
           <a
             href="mailto:claws2627@gmail.com"
-            className="rounded-full border border-ink/15 bg-white px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent/40 hover:text-accent"
+            className="rounded-full border border-ink/15 bg-white px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent/40 hover:text-accent dark:bg-surface/25 dark:border-ink/18 dark:hover:border-accent/50"
           >
             Contact for Interview
           </a>

@@ -3,18 +3,34 @@
 @tailwind utilities;
 
 @layer base {
+  /* ━━ Light theme — sky blue ━━
+     Space-separated RGB channels so Tailwind opacity
+     modifiers (e.g. text-ink/20, bg-surface/60) work. */
   :root {
-    --bg: #f2f6ff;
-    --bg2: #e6eeff;
-    --bg3: #d8e4ff;
-    --ink: #10203d;
-    --ink2: #274168;
-    --accent: #ff6b35;
-    --accent-light: #ff8b5e;
-    --muted: #5c7399;
-    --muted2: #8ea1c4;
-    --line: rgba(16, 32, 61, 0.12);
-    --line2: rgba(16, 32, 61, 0.22);
+    --color-bg:           246 248 252;  /* #f6f8fc  neutral off-white — lets white cards pop cleanly */
+    --color-bg2:          236 241 250;  /* #ecf1fa  slightly deeper neutral                          */
+    --color-bg3:          218 230 248;  /* #dae6f8  light blue for gradient accent area              */
+    --color-ink:           15  23  42;  /* #0f172a  slate-900 near-black — max readability           */
+    --color-ink2:          55  65  81;  /* #374151  gray-700 neutral — body text, no blue-family fatigue */
+    --color-accent:       255 107  53;  /* #ff6b35  orange unchanged                                 */
+    --color-accent-light: 255 145 100;  /* #ff9164                                                   */
+    --color-muted:         62  98 158;  /* #3e629e  sky-blue — chip text, UI accents, brand identity */
+    --color-muted2:       100 130 180;  /* #6482b4  muted blue                                       */
+    --color-surface:      255 255 255;  /* #ffffff  card surface                                     */
+  }
+
+  /* ━━ Dark theme — deep space navy ━━ */
+  .dark {
+    --color-bg:            7  12  30;   /* #070c1e  deep navy almost-black              */
+    --color-bg2:          12  22  54;   /* #0c1636                                       */
+    --color-bg3:          20  38  88;   /* #142658                                       */
+    --color-ink:          215 232 255;  /* #d7e8ff  off-white — readable, not harsh      */
+    --color-ink2:         148 182 228;  /* #94b6e4  keep                                 */
+    --color-accent:       255 107  53;  /* #ff6b35  keep                                 */
+    --color-accent-light: 255 145 100;  /* keep                                          */
+    --color-muted:        115 158 215;  /* #739ed7  brighter blue for chips & accents   */
+    --color-muted2:        52  82 138;  /* #34528a  keep                                 */
+    --color-surface:       22  38  95;  /* #16265f  clearly lighter than bg = card lift */
   }
 
   html {
@@ -22,11 +38,30 @@
   }
 
   body {
-    @apply bg-bg font-body text-ink antialiased overflow-x-hidden;
+    @apply font-body text-ink antialiased overflow-x-hidden;
+    background-color: rgb(var(--color-bg));
+    /* Warm base + sky-blue glow from top-right = sky feel without blue strain */
+    /* Neutral base + strong sky-blue glow top-right = brand colour without eye strain */
     background-image:
-      radial-gradient(1200px 700px at 10% -10%, rgba(255, 107, 53, 0.17), transparent 50%),
-      radial-gradient(900px 600px at 100% 0%, rgba(79, 120, 255, 0.18), transparent 55%),
-      linear-gradient(180deg, #f8fbff 0%, #edf3ff 45%, #f8fbff 100%);
+      radial-gradient(900px 650px at 3% -5%,    rgba(255, 107, 53, 0.10) 0%, transparent 55%),
+      radial-gradient(1100px 900px at 102% 4%,  rgba(56, 145, 255, 0.28) 0%, transparent 52%),
+      radial-gradient(750px 550px at 18% 105%,  rgba(90, 155, 255, 0.16) 0%, transparent 60%),
+      linear-gradient(170deg,
+        rgb(var(--color-bg))  0%,
+        rgb(var(--color-bg))  40%,
+        rgb(var(--color-bg3)) 100%);
+    transition: background-color 0.4s ease;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(1300px 900px at 8% -14%,  rgba(255, 107, 53, 0.18) 0%, transparent 55%),
+      radial-gradient(1000px 750px at 96%  2%,  rgba(60, 110, 255, 0.26) 0%, transparent 55%),
+      radial-gradient(700px  500px at 50% 108%, rgba(28,  72, 200, 0.18) 0%, transparent 60%),
+      linear-gradient(180deg,
+        rgb(var(--color-bg))  0%,
+        rgb(var(--color-bg2)) 50%,
+        rgb(var(--color-bg))  100%);
   }
 
   body::after {
@@ -44,8 +79,8 @@
   }
 
   ::selection {
-    background: rgba(255, 107, 53, 0.25);
-    color: #10203d;
+    background: rgba(255, 107, 53, 0.28);
+    color: rgb(var(--color-ink));
   }
 }
 
@@ -63,15 +98,51 @@
   }
 
   .section-topline {
-    @apply border-t border-ink/10;
+    border-top: 1px solid rgb(var(--color-ink) / 0.10);
   }
 
+  /* Light glass card — near-opaque white so it clearly lifts off the bg */
   .glass-card {
-    @apply rounded-2xl border border-white/65 bg-white/70 shadow-[0_10px_30px_rgba(39,65,104,0.10)] backdrop-blur-md;
+    @apply rounded-2xl backdrop-blur-md;
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 2px 8px rgb(var(--color-ink) / 0.04), 0 8px 28px rgb(var(--color-ink) / 0.08);
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
   }
 
+  /* Dark glass card — surface clearly lighter than bg, strong atmospheric shadow */
+  .dark .glass-card {
+    border-color: rgb(var(--color-muted) / 0.35);
+    background-color: rgb(var(--color-surface) / 0.85);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), 0 12px 48px rgba(0, 0, 0, 0.60);
+  }
+
+  /* Light chip */
+  /* Chip — sky-blue tinted pill so brand colour is always visible */
   .chip {
-    @apply inline-flex items-center rounded-full border border-ink/15 bg-white/70 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-muted;
+    @apply inline-flex items-center rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-muted;
+    border: 1px solid rgb(var(--color-muted) / 0.30);
+    background-color: rgb(var(--color-muted) / 0.09);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+
+  /* Dark chip — more vibrant for contrast on dark bg */
+  .dark .chip {
+    background-color: rgb(var(--color-muted) / 0.18);
+    border-color: rgb(var(--color-muted) / 0.45);
+  }
+
+  /* Identity card grid — dark-mode-aware */
+  .identity-grid {
+    background-image:
+      linear-gradient(rgba(16, 32, 61, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16, 32, 61, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .dark .identity-grid {
+    background-image:
+      linear-gradient(rgba(200, 220, 255, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 220, 255, 0.07) 1px, transparent 1px);
   }
 
   .text-balance {
