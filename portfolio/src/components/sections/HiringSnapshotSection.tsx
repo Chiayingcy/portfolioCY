@@ -15,7 +15,7 @@ export function HiringSnapshotSection() {
             </div>
             <a
               href="/resume.pdf"
-              download="resumeoi_Resume.pdf"
+              download="resume.pdf"
               className="rounded-full border border-ink/20 bg-white px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent dark:bg-surface/25 dark:border-ink/20 dark:hover:border-accent/50"
             >
               Download Resume
