@@ -22,51 +22,51 @@ const TIER_STYLES: Record<string, string> = {
 
 export function AboutSection() {
   return (
-    <section id="about" className="max-w-[1100px] mx-auto px-12 py-[4.5rem]">
+    <section id="about" className="container-shell section-pad">
       <FadeUp>
         <SectionHeader num="01" title="About" accent="me" />
       </FadeUp>
 
-      <div className="grid grid-cols-2 gap-20">
-        {/* left */}
+      <div className="grid gap-6 md:grid-cols-2 md:gap-8">
         <FadeUp delay={100}>
-          <blockquote className="font-display italic text-[1.25rem] text-ink-2 leading-relaxed border-l-[3px] border-accent pl-6 mb-8">
-            "I enjoy building practical systems that solve real problems — and I'm always learning."
-          </blockquote>
+          <div className="glass-card h-full p-6 md:p-8">
+            <blockquote className="mb-7 border-l-[3px] border-accent pl-5 font-display text-[1.15rem] leading-relaxed text-ink2 md:text-[1.35rem]">
+              "I build products that real people depend on — and I care about getting the details right."
+            </blockquote>
 
-          <p className="text-sm text-ink-2 leading-relaxed mb-5 font-light">
-            I'm a <strong className="font-medium text-ink">Junior Full Stack Developer</strong> at Masverse Technologies,
-            working on MyKapital (an investment platform under SC & BNM regulations) and BlockchainCert — a
-            blockchain-based certification system adopted by 100+ universities nationwide.
-          </p>
-          <p className="text-sm text-ink-2 leading-relaxed mb-8 font-light">
-            I use <strong className="font-medium text-ink">AI tools daily</strong> (GitHub Copilot, Claude, ChatGPT)
-            to move faster and solve problems more effectively. I'm still growing, but I take quality seriously.
-          </p>
+            <p className="mb-4 text-sm leading-relaxed text-ink2 md:text-[15px]">
+            I'm a <strong className="font-semibold text-ink">Junior Full Stack Developer</strong> at Masverse Technologies,
+            where I work on a regulated investment platform (MyKapital) and BlockchainCert — a digital certificate
+            system now used by 100+ universities across Malaysia.
+            </p>
+            <p className="mb-7 text-sm leading-relaxed text-ink2 md:text-[15px]">
+            I use <strong className="font-medium text-ink">AI tools daily</strong> — Copilot, ChatGPT, Claude, Gemini and others —
+            to work faster and think through problems better. I'm still growing, but I take quality seriously.
+            </p>
 
-          <div className="divide-y divide-ink/10">
-            {FACTS.map(({ k, v }) => (
-              <div key={k} className="flex gap-4 py-2.5 items-baseline">
-                <span className="font-mono text-[10px] tracking-widest uppercase text-muted w-[90px] shrink-0">{k}</span>
-                <span className="text-[13px] text-ink">{v}</span>
+            <div className="divide-y divide-ink/10">
+              {FACTS.map(({ k, v }) => (
+              <div key={k} className="flex items-start gap-4 py-3">
+                <span className="w-[96px] shrink-0 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">{k}</span>
+                <span className="text-[13px] text-ink md:text-[14px]">{v}</span>
               </div>
-            ))}
+              ))}
+            </div>
           </div>
         </FadeUp>
 
-        {/* right — skills */}
         <FadeUp delay={200}>
-          <div className="space-y-6">
+          <div className="glass-card h-full space-y-6 p-6 md:p-8">
             {SKILL_GROUPS.map((group) => (
               <div key={group.tier}>
-                <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted mb-2">
+                <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
                   {group.label}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className={`inline-flex items-center rounded-sm border font-mono text-[11px] tracking-[0.08em] px-2.5 py-1 ${TIER_STYLES[group.tier]}`}
+                      className={`inline-flex items-center rounded-full border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] ${TIER_STYLES[group.tier]}`}
                     >
                       {skill}
                     </span>
@@ -74,8 +74,8 @@ export function AboutSection() {
                 </div>
               </div>
             ))}
-            <p className="font-mono text-[11px] text-muted italic mt-2">
-              Honest framing — primary means production-confident, exploring means actively learning.
+            <p className="mt-2 font-mono text-[11px] italic text-muted">
+              "What I use every day" means production-ready. "Currently learning" means actively building and experimenting.
             </p>
           </div>
         </FadeUp>

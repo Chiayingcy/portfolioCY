@@ -6,9 +6,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        body: ['"DM Sans"', 'sans-serif'],
-        mono: ['"DM Mono"', 'monospace'],
+        display: ['"Space Grotesk"', '"Segoe UI"', 'sans-serif'],
+        body: ['"Manrope"', '"Segoe UI"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
         bg: {

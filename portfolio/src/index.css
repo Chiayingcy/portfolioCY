@@ -4,17 +4,17 @@
 
 @layer base {
   :root {
-    --bg: #f5f2ee;
-    --bg2: #edeae4;
-    --bg3: #e4e0d8;
-    --ink: #1a1714;
-    --ink2: #3d3830;
-    --accent: #c8622a;
-    --accent-light: #e8924a;
-    --muted: #8a8278;
-    --muted2: #b5b0a8;
-    --line: rgba(26, 23, 20, 0.1);
-    --line2: rgba(26, 23, 20, 0.18);
+    --bg: #f2f6ff;
+    --bg2: #e6eeff;
+    --bg3: #d8e4ff;
+    --ink: #10203d;
+    --ink2: #274168;
+    --accent: #ff6b35;
+    --accent-light: #ff8b5e;
+    --muted: #5c7399;
+    --muted2: #8ea1c4;
+    --line: rgba(16, 32, 61, 0.12);
+    --line2: rgba(16, 32, 61, 0.22);
   }
 
   html {
@@ -23,27 +23,55 @@
 
   body {
     @apply bg-bg font-body text-ink antialiased overflow-x-hidden;
+    background-image:
+      radial-gradient(1200px 700px at 10% -10%, rgba(255, 107, 53, 0.17), transparent 50%),
+      radial-gradient(900px 600px at 100% 0%, rgba(79, 120, 255, 0.18), transparent 55%),
+      linear-gradient(180deg, #f8fbff 0%, #edf3ff 45%, #f8fbff 100%);
   }
 
-  /* grain overlay */
   body::after {
     content: '';
     position: fixed;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none;
-    z-index: 999;
-    opacity: 0.4;
+    z-index: 100;
+    opacity: 0.22;
   }
 
   * {
     @apply box-border;
   }
+
+  ::selection {
+    background: rgba(255, 107, 53, 0.25);
+    color: #10203d;
+  }
 }
 
 @layer utilities {
   .font-display {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  }
+
+  .container-shell {
+    @apply mx-auto w-full max-w-[1180px] px-5 md:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 md:py-24;
+  }
+
+  .section-topline {
+    @apply border-t border-ink/10;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/65 bg-white/70 shadow-[0_10px_30px_rgba(39,65,104,0.10)] backdrop-blur-md;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-ink/15 bg-white/70 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-muted;
   }
 
   .text-balance {
@@ -57,5 +85,38 @@
 
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+
+  .float-slow {
+    animation: floatY 6s ease-in-out infinite;
+  }
+
+  .reveal {
+    animation: reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .ticker-wrap:hover .ticker-track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

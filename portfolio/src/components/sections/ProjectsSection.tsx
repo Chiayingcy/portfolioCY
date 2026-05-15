@@ -38,22 +38,31 @@ export function ProjectsSection() {
   const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter((p) => p.type === filter)
 
   return (
-    <section id="projects" className="border-t border-ink/10 max-w-[1100px] mx-auto px-12 py-[4.5rem]">
+    <section id="projects" className="container-shell section-pad section-topline">
       <FadeUp>
-        <SectionHeader num="03" title="Projects" accent="& repos" />
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
+          <SectionHeader num="03" title="Projects" accent="& repos" />
+          <a
+            href="https://github.com/Chiayingcy"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-ink/20 bg-white px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
+          >
+            &#128279; View GitHub Profile
+          </a>
+        </div>
       </FadeUp>
 
-      {/* filter tabs */}
       <FadeUp delay={50}>
-        <div className="flex gap-1 mb-10 p-1 bg-bg2 rounded-md w-fit">
+        <div className="mb-8 flex w-fit flex-wrap gap-1 rounded-2xl border border-white/70 bg-white/70 p-1.5 shadow-[0_8px_22px_rgba(16,32,61,0.08)]">
           {FILTER_TABS.map((tab) => (
             <button
               key={tab.value}
               onClick={() => setFilter(tab.value)}
               className={cn(
-                'font-mono text-[11px] tracking-widest uppercase px-4 py-2 rounded transition-all duration-200',
+                'rounded-xl px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] transition-all duration-200',
                 filter === tab.value
-                  ? 'bg-bg text-ink shadow-sm'
+                  ? 'bg-ink text-white shadow-sm'
                   : 'text-muted hover:text-ink'
               )}
             >
@@ -63,46 +72,90 @@ export function ProjectsSection() {
         </div>
       </FadeUp>
 
-      <div className="grid grid-cols-2 gap-3.5">
+      <div className="grid gap-4 md:grid-cols-2">
         {filtered.map((project, i) => (
           <FadeUp key={project.id} delay={i * 50}>
             <div
               className={cn(
-                'group relative bg-bg2 border border-ink/10 rounded-lg p-6 transition-all duration-200 hover:-translate-y-0.5',
+                'group glass-card relative h-full p-6 transition-all duration-200 hover:-translate-y-1',
                 TYPE_HOVER[project.type]
               )}
             >
-              {/* top accent bar */}
-              <div className={cn('absolute top-0 left-0 right-0 h-0.5 rounded-t-lg bg-transparent transition-all duration-200', TYPE_TOP[project.type])} />
+              <div className={cn('absolute left-0 right-0 top-0 h-1 rounded-t-2xl bg-transparent transition-all duration-200', TYPE_TOP[project.type])} />
 
-              <p className={cn('font-mono text-[10px] tracking-[0.12em] uppercase mb-3', TYPE_ACCENT[project.type])}>
+              <p className={cn('mb-3 font-mono text-[10px] uppercase tracking-[0.12em]', TYPE_ACCENT[project.type])}>
                 {project.category}
               </p>
-              <h3 className="font-display font-bold text-[1.2rem] text-ink mb-2 leading-tight">
+              <h3 className="mb-2 font-display text-[1.18rem] font-semibold leading-tight text-ink md:text-[1.3rem]">
                 {project.title}
               </h3>
-              <p className="text-[13px] text-ink-2 font-light leading-relaxed mb-4">
+              <p className="mb-4 text-[13px] leading-relaxed text-ink2 md:text-[14px]">
                 {project.description}
               </p>
 
               {project.highlights && (
-                <ul className="space-y-1 mb-4">
+                <ul className="mb-4 space-y-1.5">
                   {project.highlights.map((h, j) => (
-                    <li key={j} className="text-[12px] text-ink-2 font-light pl-3 relative">
-                      <span className="absolute left-0 text-accent text-[10px] top-[2px]">→</span>
+                    <li key={j} className="relative pl-3 text-[12px] text-ink2 md:text-[13px]">
+                      <span className="absolute left-0 top-[2px] text-[10px] text-accent">→</span>
                       {h}
                     </li>
                   ))}
                 </ul>
               )}
 
-              <div className="flex flex-wrap gap-1.5">
+              {project.outcomes && project.outcomes.length > 0 && (
+                <div className="mb-4 rounded-xl border border-emerald-500/25 bg-emerald-500/10 p-3">
+                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-emerald-700">
+                    Business outcomes
+                  </p>
+                  <ul className="space-y-1">
+                    {project.outcomes.map((outcome) => (
+                      <li key={outcome} className="relative pl-3 text-[12px] text-ink2 md:text-[13px]">
+                        <span className="absolute left-0 top-[2px] text-emerald-700">•</span>
+                        {outcome}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.architecture && project.architecture.length > 0 && (
+                <details className="mb-4 rounded-xl border border-ink/12 bg-white/70 p-3">
+                  <summary className="cursor-pointer list-none font-mono text-[10px] uppercase tracking-[0.12em] text-ink">
+                    CTO deep dive
+                  </summary>
+                  <ul className="mt-3 space-y-1.5 border-t border-ink/10 pt-3">
+                    {project.architecture.map((item) => (
+                      <li key={item} className="relative pl-3 text-[12px] text-ink2 md:text-[13px]">
+                        <span className="absolute left-0 top-[2px] text-accent">•</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              )}
+
+              <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="font-mono text-[10px] px-2 py-0.5 rounded-sm bg-bg3 border border-ink/10 text-muted">
+                  <span key={tag} className="rounded-full border border-ink/15 bg-white px-3 py-1 font-mono text-[10px] uppercase tracking-[0.08em] text-muted">
                     {tag}
                   </span>
                 ))}
               </div>
+
+              {project.github && (
+                <div className="mt-4 border-t border-ink/10 pt-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted transition-colors hover:text-accent"
+                  >
+                    <span>&#128279;</span> View on GitHub
+                  </a>
+                </div>
+              )}
             </div>
           </FadeUp>
         ))}
