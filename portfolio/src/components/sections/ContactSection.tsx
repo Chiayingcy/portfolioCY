@@ -1,11 +1,10 @@
-import React from 'react'
-import { FadeUp } from '@/components/ui/FadeUp'
+﻿import { FadeUp } from '@/components/ui/FadeUp'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
 const CONTACT_ITEMS = [
-  { icon: '✉', label: 'Email', val: 'claws2627@gmail.com', href: 'mailto:claws2627@gmail.com' },
-  { icon: '☎', label: 'Phone', val: '+6019-5747073', href: 'tel:+60195747073' },
-  { icon: '◈', label: 'GitHub', val: 'github.com/Chiayingcy', href: 'https://github.com/Chiayingcy' },
+  { icon: 'âœ‰', label: 'Email', val: 'claws2627@gmail.com', href: 'mailto:claws2627@gmail.com' },
+  { icon: 'â˜Ž', label: 'Phone', val: '+6019-5747073', href: 'tel:+60195747073' },
+  { icon: 'â—ˆ', label: 'GitHub', val: 'github.com/Chiayingcy', href: 'https://github.com/Chiayingcy' },
   { icon: 'in', label: 'LinkedIn', val: 'ooi-chia-ying-9ba7031b7', href: 'https://www.linkedin.com/in/ooi-chia-ying-9ba7031b7/' },
 ]
 

@@ -1,5 +1,4 @@
-import React from 'react'
-
+﻿
 interface SectionHeaderProps {
   num: string
   title: string

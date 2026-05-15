@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+﻿import { useEffect, useState } from 'react'
 import { Sun, Moon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { NAV_ITEMS } from '@/data'

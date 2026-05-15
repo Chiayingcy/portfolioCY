@@ -1,5 +1,4 @@
-import React from 'react'
-import { FadeUp } from '@/components/ui/FadeUp'
+﻿import { FadeUp } from '@/components/ui/FadeUp'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { EXPERIENCES } from '@/data'
 
@@ -24,7 +23,7 @@ export function ExperienceSection() {
                 <ul className="mb-4 space-y-2">
                   {exp.bullets.map((b, j) => (
                     <li key={j} className="relative pl-4 text-[13px] leading-relaxed text-ink2 md:text-[14px]">
-                      <span className="absolute left-0 top-[4px] text-accent text-[11px]">•</span>
+                      <span className="absolute left-0 top-[4px] text-accent text-[11px]">â€¢</span>
                       {b}
                     </li>
                   ))}

@@ -1,16 +1,14 @@
-import React from 'react'
-import { FadeUp } from '@/components/ui/FadeUp'
+﻿import { FadeUp } from '@/components/ui/FadeUp'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { Badge } from '@/components/ui/Badge'
 import { SKILL_GROUPS } from '@/data'
 
 const FACTS = [
   { k: 'Location', v: 'Puchong, Selangor, Malaysia' },
-  { k: 'Current role', v: 'Junior Full Stack Dev · Masverse Technologies' },
-  { k: 'Since', v: 'April 2024 · Present' },
+  { k: 'Current role', v: 'Junior Full Stack Dev Â· Masverse Technologies' },
+  { k: 'Since', v: 'April 2024 Â· Present' },
   { k: 'Email', v: 'claws2627@gmail.com' },
   { k: 'Phone', v: '+6019-5747073' },
-  { k: 'Trading', v: 'XAUUSD · EURUSD · GBPUSD · FundingPips · AlphaCapital' },
+  { k: 'Trading', v: 'XAUUSD Â· EURUSD Â· GBPUSD Â· FundingPips Â· AlphaCapital' },
 ]
 
 const TIER_STYLES: Record<string, string> = {
@@ -31,16 +29,16 @@ export function AboutSection() {
         <FadeUp delay={100}>
           <div className="glass-card h-full p-6 md:p-8">
             <blockquote className="mb-7 border-l-[3px] border-accent pl-5 font-display text-[1.15rem] leading-relaxed text-ink2 md:text-[1.35rem]">
-              "I build products that real people depend on — and I care about getting the details right."
+              "I build products that real people depend on â€” and I care about getting the details right."
             </blockquote>
 
             <p className="mb-4 text-sm leading-relaxed text-ink2 md:text-[15px]">
             I'm a <strong className="font-semibold text-ink">Junior Full Stack Developer</strong> at Masverse Technologies,
-            where I work on a regulated investment platform (MyKapital) and BlockchainCert — a digital certificate
+            where I work on a regulated investment platform (MyKapital) and BlockchainCert â€” a digital certificate
             system now used by 100+ universities across Malaysia.
             </p>
             <p className="mb-7 text-sm leading-relaxed text-ink2 md:text-[15px]">
-            I use <strong className="font-medium text-ink">AI tools daily</strong> — Copilot, ChatGPT, Claude, Gemini and others —
+            I use <strong className="font-medium text-ink">AI tools daily</strong> â€” Copilot, ChatGPT, Claude, Gemini and others â€”
             to work faster and think through problems better. I'm still growing, but I take quality seriously.
             </p>
 

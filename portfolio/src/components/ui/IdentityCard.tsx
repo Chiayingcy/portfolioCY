@@ -1,5 +1,4 @@
-import React from 'react'
-
+﻿
 export function IdentityCard() {
   return (
     <div className="float-slow relative w-[250px] max-w-full shrink-0">
@@ -27,7 +26,7 @@ export function IdentityCard() {
           </div>
 
           <p className="font-display text-lg font-semibold text-ink">Chia Ying Ooi</p>
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">Full Stack · Fintech · Web3</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">Full Stack Â· Fintech Â· Web3</p>
 
           <div className="mt-5 rounded-full border border-accent/35 bg-accent/10 px-4 py-1">
             <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-accent">claws</span>

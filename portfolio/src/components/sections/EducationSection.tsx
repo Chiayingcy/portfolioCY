@@ -1,5 +1,4 @@
-import React from 'react'
-import { FadeUp } from '@/components/ui/FadeUp'
+﻿import { FadeUp } from '@/components/ui/FadeUp'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { EDUCATION, COURSES } from '@/data'
 

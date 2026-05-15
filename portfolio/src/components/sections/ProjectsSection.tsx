@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+﻿import { useState } from 'react'
 import { FadeUp } from '@/components/ui/FadeUp'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { PROJECTS } from '@/data'
@@ -97,7 +97,7 @@ export function ProjectsSection() {
                 <ul className="mb-4 space-y-1.5">
                   {project.highlights.map((h, j) => (
                     <li key={j} className="relative pl-3 text-[12px] text-ink2 md:text-[13px]">
-                      <span className="absolute left-0 top-[2px] text-[10px] text-accent">→</span>
+                      <span className="absolute left-0 top-[2px] text-[10px] text-accent">â†’</span>
                       {h}
                     </li>
                   ))}
@@ -112,7 +112,7 @@ export function ProjectsSection() {
                   <ul className="space-y-1">
                     {project.outcomes.map((outcome) => (
                       <li key={outcome} className="relative pl-3 text-[12px] text-ink2 md:text-[13px]">
-                        <span className="absolute left-0 top-[2px] text-emerald-700">•</span>
+                        <span className="absolute left-0 top-[2px] text-emerald-700">â€¢</span>
                         {outcome}
                       </li>
                     ))}
@@ -128,7 +128,7 @@ export function ProjectsSection() {
                   <ul className="mt-3 space-y-1.5 border-t border-ink/10 pt-3">
                     {project.architecture.map((item) => (
                       <li key={item} className="relative pl-3 text-[12px] text-ink2 md:text-[13px]">
-                        <span className="absolute left-0 top-[2px] text-accent">•</span>
+                        <span className="absolute left-0 top-[2px] text-accent">â€¢</span>
                         {item}
                       </li>
                     ))}

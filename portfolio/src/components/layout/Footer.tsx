@@ -1,12 +1,11 @@
-import React from 'react'
-
+﻿
 export function Footer() {
   return (
     <footer className="section-topline mt-12">
       <div className="container-shell py-10">
         <div className="glass-card flex flex-col items-center justify-between gap-4 p-6 text-center md:flex-row md:text-left">
           <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
-            © 2026 Chia Ying Ooi · Full Stack Developer · Puchong, Selangor
+            Â© 2026 Chia Ying Ooi Â· Full Stack Developer Â· Puchong, Selangor
           </p>
           <a
             href="mailto:claws2627@gmail.com"
