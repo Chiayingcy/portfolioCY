@@ -1,44 +1,43 @@
 import React from 'react'
 import { FadeUp } from '@/components/ui/FadeUp'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { Separator } from '@/components/ui/Separator'
 import { EXPERIENCES } from '@/data'
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="border-t border-ink/10 max-w-[1100px] mx-auto px-12 py-[4.5rem]">
+    <section id="experience" className="container-shell section-pad section-topline">
       <FadeUp>
         <SectionHeader num="02" title="Work" accent="experience" />
       </FadeUp>
 
-      <div className="space-y-0">
+      <div className="space-y-4 md:space-y-5">
         {EXPERIENCES.map((exp, i) => (
           <FadeUp key={exp.id} delay={i * 80}>
-            <div className="grid grid-cols-[180px_1fr] gap-10 py-10 border-b border-ink/10 last:border-b-0">
-              <div>
-                <p className="font-mono text-[11px] text-muted tracking-[0.06em] mb-1">{exp.period}</p>
-                <p className="text-[12px] text-muted-2 leading-snug">{exp.companyShort}</p>
+            <article className="glass-card grid gap-5 p-5 md:grid-cols-[210px_1fr] md:gap-8 md:p-7">
+              <div className="space-y-2">
+                <span className="chip">{exp.period}</span>
+                <p className="text-[12px] leading-snug text-muted">{exp.companyShort}</p>
               </div>
               <div>
-                <h3 className="font-display font-bold text-[1.25rem] text-ink mb-0.5">{exp.role}</h3>
-                <p className="font-mono text-[11px] text-accent tracking-[0.06em] uppercase mb-4">{exp.subtitle}</p>
-                <ul className="space-y-1.5 mb-4">
+                <h3 className="mb-1 font-display text-[1.22rem] font-semibold text-ink md:text-[1.35rem]">{exp.role}</h3>
+                <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">{exp.subtitle}</p>
+                <ul className="mb-4 space-y-2">
                   {exp.bullets.map((b, j) => (
-                    <li key={j} className="text-[13px] text-ink-2 font-light pl-4 relative leading-relaxed">
-                      <span className="absolute left-0 top-[5px] text-muted-2 text-[11px]">—</span>
+                    <li key={j} className="relative pl-4 text-[13px] leading-relaxed text-ink2 md:text-[14px]">
+                      <span className="absolute left-0 top-[4px] text-accent text-[11px]">•</span>
                       {b}
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-2">
                   {exp.tags.map((tag) => (
-                    <span key={tag} className="font-mono text-[10px] px-2 py-0.5 rounded-sm bg-bg2 border border-ink/10 text-muted">
+                    <span key={tag} className="rounded-full border border-ink/15 bg-white/80 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.08em] text-muted dark:bg-surface/28 dark:border-ink/15">
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-            </div>
+            </article>
           </FadeUp>
         ))}
       </div>

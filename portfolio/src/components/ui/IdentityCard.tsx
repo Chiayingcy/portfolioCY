@@ -2,94 +2,41 @@ import React from 'react'
 
 export function IdentityCard() {
   return (
-    <div className="relative w-[220px] shrink-0">
-      {/* card */}
-      <div className="relative w-[220px] h-[280px] rounded-2xl bg-bg-dark3 border border-white/8 overflow-hidden">
+    <div className="float-slow relative w-[250px] max-w-full shrink-0">
+      <div className="glass-card relative h-[320px] w-[250px] overflow-hidden rounded-3xl border border-white/70">
+        <div className="absolute -left-8 -top-8 h-28 w-28 rounded-full bg-accent/25 blur-2xl" />
+        <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-blue-500/25 blur-2xl" />
 
-        {/* grid lines */}
-        {[0, 1, 2, 3].map((i) => (
-          <div
-            key={`h${i}`}
-            className="absolute left-0 right-0 h-px bg-white/5"
-            style={{ top: `${25 + i * 22}%` }}
-          />
-        ))}
-        {[0, 1, 2].map((i) => (
-          <div
-            key={`v${i}`}
-            className="absolute top-0 bottom-0 w-px bg-white/5"
-            style={{ left: `${25 + i * 25}%` }}
-          />
-        ))}
+        <div className="identity-grid absolute inset-0" />
 
-        {/* corner marks */}
-        {[
-          'top-3 left-3 border-t-2 border-l-2',
-          'top-3 right-3 border-t-2 border-r-2',
-          'bottom-3 left-3 border-b-2 border-l-2',
-          'bottom-3 right-3 border-b-2 border-r-2',
-        ].map((cls, i) => (
-          <div key={i} className={`absolute w-4 h-4 border-accent/70 ${cls}`} />
-        ))}
+        <div className="relative z-10 flex h-full flex-col items-center justify-center">
+          <span className="chip mb-5">Product Builder</span>
 
-        {/* top label */}
-        <div className="absolute top-5 left-0 right-0 text-center font-mono text-[9px] tracking-[0.2em] text-accent/70 uppercase">
-          Portfolio · 2026
-        </div>
-
-        {/* initials circle */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%]">
-          <div className="relative w-24 h-24">
-            {/* spinning dashed ring */}
-            <svg
-              className="absolute inset-0 animate-spin-slow"
-              viewBox="0 0 96 96"
-              fill="none"
-            >
-              <circle
-                cx="48" cy="48" r="44"
-                stroke="#c8622a"
-                strokeWidth="1"
-                strokeDasharray="12 6"
-                opacity="0.45"
-              />
+          <div className="relative mb-4 h-24 w-24">
+            <svg className="absolute inset-0 animate-spin-slow" viewBox="0 0 96 96" fill="none">
+              <circle cx="48" cy="48" r="44" stroke="#ff6b35" strokeWidth="1.5" strokeDasharray="10 6" opacity="0.5" />
             </svg>
-            {/* solid ring */}
-            <div className="absolute inset-2 rounded-full border border-white/8 bg-bg-dark2 flex items-center justify-center">
+            <div className="absolute inset-2 flex items-center justify-center rounded-full border border-ink/15 bg-white/80 dark:bg-white/12 dark:border-white/20">
               <span
-                className="font-display font-black text-3xl leading-none"
-                style={{ background: 'linear-gradient(135deg, #c8622a, #e8924a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                className="font-display text-3xl font-semibold leading-none"
+                style={{ background: 'linear-gradient(135deg, #ff6b35, #4f78ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
               >
                 CY
               </span>
             </div>
           </div>
-        </div>
 
-        {/* accent line -->*/}
-        <div
-          className="absolute left-6 right-6 h-px"
-          style={{ bottom: '108px', background: 'linear-gradient(90deg, #c8622a, #e8924a, #c8622a)' }}
-        />
+          <p className="font-display text-lg font-semibold text-ink">Chia Ying Ooi</p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">Full Stack · Fintech · Web3</p>
 
-        {/* name */}
-        <div className="absolute bottom-16 left-0 right-0 text-center">
-          <p className="font-display font-black text-[15px] text-white/90 leading-tight">
-            Chia Ying Ooi
-          </p>
-        </div>
-
-        {/* nickname badge */}
-        <div className="absolute bottom-6 left-0 right-0 flex justify-center">
-          <div className="border border-accent/60 bg-accent/10 rounded px-3 py-0.5">
-            <span className="font-mono text-[11px] tracking-[0.22em] text-accent uppercase">claws</span>
+          <div className="mt-5 rounded-full border border-accent/35 bg-accent/10 px-4 py-1">
+            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-accent">claws</span>
           </div>
         </div>
       </div>
 
-      {/* caption */}
-      <p className="mt-2 text-center font-mono text-[10px] tracking-[0.1em] uppercase text-muted-2">
-        Chia Ying Ooi · claws
+      <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
+        Available for interview calls
       </p>
     </div>
   )

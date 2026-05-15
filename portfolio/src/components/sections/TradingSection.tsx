@@ -25,13 +25,13 @@ const STAT_CARDS = [
 
 export function TradingSection() {
   return (
-    <section id="trading" className="border-t border-ink/10 max-w-[1100px] mx-auto px-12 py-[4.5rem]">
+    <section id="trading" className="container-shell section-pad section-topline">
       <FadeUp>
         <SectionHeader num="04" title="Trading" accent="background" />
       </FadeUp>
 
       <FadeUp delay={80}>
-        <p className="text-base text-ink-2 max-w-[640px] leading-relaxed font-light mb-10">
+        <p className="mb-8 max-w-[700px] text-[15px] leading-relaxed text-ink2 md:mb-10 md:text-base">
           I actively trade <strong className="font-medium text-ink">XAUUSD, EURUSD, and GBPUSD</strong> and
           have passed prop firm evaluations with FundingPips and AlphaCapitalGroup. Trading has sharpened my{' '}
           <strong className="font-medium text-ink">analytical thinking, risk discipline, and decision-making under pressure</strong>
@@ -39,42 +39,43 @@ export function TradingSection() {
         </p>
       </FadeUp>
 
-      {/* stat cards */}
       <FadeUp delay={120}>
-        <div className="grid grid-cols-5 gap-3 mb-8">
+        <div className="mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {STAT_CARDS.map((s) => (
-            <div key={s.label} className="bg-bg2 border border-ink/10 rounded-lg p-4 hover:border-ink/20 transition-colors">
-              <p className="font-mono text-[10px] tracking-widest uppercase text-muted mb-1">{s.label}</p>
-              <p className="font-display font-bold text-[1.3rem] text-ink leading-none mb-1">{s.val}</p>
-              <p className="text-[11px] text-muted">{s.sub}</p>
+            <div key={s.label} className="glass-card p-4 md:p-5">
+              <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">{s.label}</p>
+              <p className="mb-1 font-display text-[1.3rem] font-semibold leading-none text-ink">{s.val}</p>
+              <p className="text-[11px] text-muted md:text-[12px]">{s.sub}</p>
             </div>
           ))}
         </div>
       </FadeUp>
 
-      {/* instruments */}
       <FadeUp delay={160}>
-        <p className="font-mono text-[10px] tracking-widest uppercase text-muted mb-3">Instruments traded</p>
+        <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">Instruments traded</p>
+        <p className="mb-4 text-[13px] text-muted">Markets I trade regularly — and why they shape how I think about building fintech products.</p>
         <div className="space-y-2 mb-6">
           {TRADING_INSTRUMENTS.map((inst) => (
             <div
               key={inst.symbol}
-              className="flex items-center gap-6 px-5 py-4 bg-bg2 border border-ink/10 rounded-lg hover:border-ink/20 transition-colors"
+              className="glass-card flex flex-col gap-3 px-5 py-4 md:flex-row md:items-center md:gap-6"
             >
               <span className={`font-display font-bold text-[1.2rem] w-[110px] shrink-0 ${SYMBOL_COLOR[inst.color]}`}>
                 {inst.symbol}
               </span>
-              <p className="flex-1 text-[13px] text-ink-2 font-light">{inst.description}</p>
-              <span className={`font-mono text-[10px] tracking-widest uppercase px-2.5 py-1 rounded-sm border shrink-0 ${STATUS_BADGE[inst.color]}`}>
-                Active
-              </span>
+              <p className="flex-1 text-[13px] text-ink2 md:text-[14px]">{inst.description}</p>
+              {inst.role && (
+                <span className={`w-fit shrink-0 rounded-full border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.12em] ${STATUS_BADGE[inst.color]}`}>
+                  {inst.role}
+                </span>
+              )}
             </div>
           ))}
         </div>
       </FadeUp>
 
       <FadeUp delay={200}>
-        <div className="p-5 bg-yellow-600/5 border border-yellow-600/20 rounded-lg italic text-[13px] text-ink-2 leading-relaxed">
+        <div className="glass-card border-amber-500/30 bg-amber-500/10 p-5 text-[13px] italic leading-relaxed text-ink2 md:text-[14px]">
           Being a prop trader means I understand fintech and payment platforms from the user's side — I know
           what makes a payout flow trustworthy, why real-time account visibility matters, and what it feels
           like when a system fails under pressure. That perspective informs how I build.

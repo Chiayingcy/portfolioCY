@@ -5,8 +5,22 @@ export interface Project {
   category: string
   description: string
   highlights?: string[]
+  outcomes?: string[]
+  architecture?: string[]
   tags: string[]
   link?: string
+  github?: string
+}
+
+export interface ImpactMetric {
+  label: string
+  value: string
+  note: string
+}
+
+export interface HiringSignal {
+  title: string
+  points: string[]
 }
 
 export interface Experience {
@@ -25,6 +39,7 @@ export interface TradingInstrument {
   name: string
   description: string
   status: 'active' | 'learning'
+  role?: string
   color: 'gold' | 'blue' | 'orange'
 }
 

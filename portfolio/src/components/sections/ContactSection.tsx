@@ -11,37 +11,66 @@ const CONTACT_ITEMS = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="border-t border-ink/10 max-w-[1100px] mx-auto px-12 py-[4.5rem]">
+    <section id="contact" className="container-shell section-pad section-topline">
       <FadeUp>
         <SectionHeader num="06" title="Get in" accent="touch" />
       </FadeUp>
 
-      <div className="grid grid-cols-2 gap-16 items-center">
+      <div className="grid items-center gap-6 md:grid-cols-2 md:gap-8">
         <FadeUp delay={80}>
-          <h3 className="font-display font-black text-[clamp(2.5rem,5vw,4rem)] text-ink leading-none mb-4">
-            Let's work<br />
-            <em className="font-display italic font-normal text-accent">together.</em>
-          </h3>
-          <p className="text-sm text-muted font-light leading-relaxed">
-            Open to full-stack, fintech, and payment engineering roles.<br />
-            Based in Puchong — available on-site in KL or remote.
-          </p>
+          <div className="glass-card p-6 md:p-8">
+            <h3 className="mb-4 font-display text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-[0.92] text-ink">
+              Let's build products
+              <span className="block text-accent">people trust.</span>
+            </h3>
+            <p className="mb-6 text-sm leading-relaxed text-muted md:text-[15px]">
+              Open to full-stack, fintech, and payment engineering roles.
+              Based in Puchong, available on-site in KL or remote collaboration.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="mailto:claws2627@gmail.com?subject=Interview%20Invitation"
+                className="rounded-full bg-ink px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-white transition-colors hover:bg-accent dark:bg-accent dark:hover:bg-accent-light"
+              >
+                Schedule Interview
+              </a>
+              <a
+                href="/resume.pdf"
+                download="ChiaYingOoi_Resume.pdf"
+                className="rounded-full border border-ink/20 bg-white px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent/40 hover:text-accent dark:bg-surface/25 dark:border-ink/20 dark:hover:border-accent/50"
+              >
+                Download Resume
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ooi-chia-ying-9ba7031b7/"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-ink/20 bg-white px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent/40 hover:text-accent dark:bg-surface/25 dark:border-ink/20 dark:hover:border-accent/50"
+              >
+                Connect on LinkedIn
+              </a>
+            </div>
+            <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+              Typical response time: within 24 hours
+            </p>
+          </div>
         </FadeUp>
 
         <FadeUp delay={160}>
-          <div className="space-y-2.5">
+          <div className="space-y-3">
             {CONTACT_ITEMS.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel="noreferrer"
-                className="flex items-center gap-4 p-4 bg-bg2 border border-ink/10 rounded-lg text-ink hover:border-ink/25 hover:translate-x-1 transition-all duration-200"
+                className="glass-card flex items-center gap-4 p-4 text-ink transition-all duration-200 hover:translate-x-1"
               >
                 <span className="text-[15px] w-6 text-center shrink-0">{item.icon}</span>
                 <div>
-                  <p className="font-mono text-[10px] tracking-widest uppercase text-muted mb-0.5">{item.label}</p>
-                  <p className="text-[13px] font-medium text-ink">{item.val}</p>
+                  <p className="mb-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">{item.label}</p>
+                  <p className="text-[13px] font-semibold text-ink md:text-[14px]">{item.val}</p>
                 </div>
               </a>
             ))}

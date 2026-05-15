@@ -1,7 +1,7 @@
 import React from 'react'
 import { IdentityCard } from '@/components/ui/IdentityCard'
 import { Badge } from '@/components/ui/Badge'
-import { TICKER_ITEMS } from '@/data'
+import { SKILL_GROUPS, TICKER_ITEMS } from '@/data'
 
 const STACK_TAGS = [
   { label: 'Laravel', v: 'accent' as const },
@@ -17,57 +17,50 @@ const STACK_TAGS = [
   { label: 'Tailwind CSS', v: 'default' as const },
 ]
 
-const doubled = [...TICKER_ITEMS, ...TICKER_ITEMS]
+const SKILL_ITEMS = SKILL_GROUPS.flatMap((group) => group.skills.map((skill) => skill.toUpperCase()))
+const tickerItems = Array.from(new Set([...TICKER_ITEMS, ...SKILL_ITEMS]))
+const doubled = [...tickerItems, ...tickerItems]
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col">
-      {/* main content */}
-      <div className="flex-1 flex items-end max-w-[1100px] mx-auto w-full px-12 pt-[110px] pb-12 border-b border-ink/18">
-        <div className="grid grid-cols-[1fr_auto] gap-12 w-full items-end">
-
-          {/* left */}
-          <div>
-            <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase text-muted mb-6">
-              <span className="text-muted-2">——</span>
-              Full Stack Developer · Puchong, Selangor, MY
+    <section className="relative flex min-h-screen flex-col pt-24 md:pt-28">
+      <div className="container-shell flex flex-1 items-end pb-12 md:pb-14">
+        <div className="glass-card grid w-full items-center gap-10 p-6 md:grid-cols-[1fr_auto] md:p-10">
+          <div className="reveal">
+            <div className="mb-5 flex flex-wrap items-center gap-2">
+              <span className="chip">Full Stack Developer</span>
+              <span className="chip">Puchong, Selangor, MY</span>
+              <span className="chip border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400">Open to Opportunities</span>
             </div>
 
-            <h1 className="font-display font-black text-[clamp(3.5rem,8vw,7rem)] leading-[0.95] tracking-tight text-ink mb-6">
-              Chia<br />
-              Ying{' '}
-              <em className="font-display italic font-normal text-accent">Ooi</em>
+            <h1 className="mb-5 font-display text-[clamp(2.6rem,8vw,6.2rem)] font-semibold leading-[0.9] tracking-tight text-ink">
+              Chia Ying
+              <span className="block text-accent">Ooi</span>
             </h1>
 
-            <p className="text-base text-ink-2 max-w-[520px] leading-relaxed mb-8 font-light">
-              I build <strong className="font-medium text-ink">fintech platforms and blockchain systems</strong> at Masverse —
-              working across Laravel backends, Vue.js and React frontends, and Maschain integrations.
-              Outside of code, I trade <strong className="font-medium text-ink">XAUUSD, EURUSD & GBPUSD</strong> and
-              run prop firm evaluations.
+            <p className="text-balance mb-7 max-w-[620px] text-base leading-relaxed text-ink2 md:text-lg">
+              I build <strong className="font-semibold text-ink">fintech and blockchain products</strong> that real users depend on — from investment platforms to blockchain-verified certificates.
+              I code in Laravel, Vue, and React, and I bring a trader's mindset to how I think about risk, data, and edge cases.
             </p>
 
-            <div className="flex gap-3 flex-wrap mb-10">
+            <div className="mb-8 flex flex-wrap gap-3">
+              <a
+                href="#contact"
+                className="rounded-full bg-ink px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-accent dark:bg-accent dark:hover:bg-accent-light"
+              >
+                Let's Collaborate
+              </a>
               <a
                 href="#projects"
-                className="font-mono text-[11px] tracking-widest uppercase px-5 py-3 rounded-sm bg-ink text-bg hover:bg-accent transition-all duration-200 hover:-translate-y-0.5"
+                className="rounded-full border border-ink/20 bg-white px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent dark:bg-surface/25 dark:border-ink/20 dark:hover:border-accent/50"
               >
-                View Projects
+                See Project Highlights
               </a>
               <a
-                href="https://github.com/Chiayingcy"
-                target="_blank"
-                rel="noreferrer"
-                className="font-mono text-[11px] tracking-widest uppercase px-5 py-3 rounded-sm border border-ink/18 text-ink hover:border-ink hover:-translate-y-0.5 transition-all duration-200"
+                href="mailto:claws2627@gmail.com"
+                className="rounded-full border border-ink/20 bg-white px-6 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-ink/35 dark:bg-surface/25 dark:border-ink/20"
               >
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ooi-chia-ying-9ba7031b7/"
-                target="_blank"
-                rel="noreferrer"
-                className="font-mono text-[11px] tracking-widest uppercase px-5 py-3 rounded-sm border border-ink/18 text-ink hover:border-ink hover:-translate-y-0.5 transition-all duration-200"
-              >
-                LinkedIn
+                Email Me
               </a>
             </div>
 
@@ -78,31 +71,23 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* right — identity card */}
-          <IdentityCard />
+          <div className="mx-auto md:mx-0">
+            <IdentityCard />
+          </div>
         </div>
       </div>
 
-      {/* ticker */}
-      <div className="border-t border-b border-ink/10 py-2.5 overflow-hidden">
+      <div className="ticker-wrap section-topline border-b border-ink/10 py-3 overflow-hidden">
         <div
-          className="flex gap-12 whitespace-nowrap"
-          style={{ animation: 'ticker 30s linear infinite' }}
+          className="ticker-track flex w-max gap-12 whitespace-nowrap animate-ticker will-change-transform [animation-duration:44s]"
         >
           {doubled.map((item, i) => (
-            <span key={i} className="font-mono text-[11px] tracking-widest uppercase text-muted">
-              <span className="text-accent mr-12">·</span>{item}
+            <span key={i} className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted">
+              <span className="mr-12 text-accent">·</span>{item}
             </span>
           ))}
         </div>
       </div>
-
-      <style>{`
-        @keyframes ticker {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-      `}</style>
     </section>
   )
 }
