@@ -38,7 +38,7 @@ export function HeroSection() {
             </h1>
 
             <p className="text-balance mb-7 max-w-[620px] text-base leading-relaxed text-ink2 md:text-lg">
-              I build <strong className="font-semibold text-ink">fintech and blockchain products</strong> that real users depend on â€” from investment platforms to blockchain-verified certificates.
+              I build <strong className="font-semibold text-ink">fintech and blockchain products</strong> that real users depend on — from investment platforms to blockchain-verified certificates.
               I code in Laravel, Vue, and React, and I bring a trader's mindset to how I think about risk, data, and edge cases.
             </p>
 
@@ -82,7 +82,7 @@ export function HeroSection() {
         >
           {doubled.map((item, i) => (
             <span key={i} className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted">
-              <span className="mr-12 text-accent">Â·</span>{item}
+              <span className="mr-12 text-accent">·</span>{item}
             </span>
           ))}
         </div>

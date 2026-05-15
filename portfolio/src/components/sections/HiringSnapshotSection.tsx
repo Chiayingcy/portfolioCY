@@ -39,7 +39,7 @@ export function HiringSnapshotSection() {
                 <ul className="space-y-2">
                   {signal.points.map((point) => (
                     <li key={point} className="relative pl-4 text-[13px] text-ink2 md:text-[14px]">
-                      <span className="absolute left-0 top-[1px] text-accent">â€¢</span>
+                      <span className="absolute left-0 top-[1px] text-accent">•</span>
                       {point}
                     </li>
                   ))}
