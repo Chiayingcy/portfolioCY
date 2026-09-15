@@ -25,14 +25,14 @@ const CONTACT_ITEMS: { icon: IconComponent; label: string; val: string; href: st
   { icon: Mail,         label: 'Email',    val: 'claws2627@gmail.com',      href: 'mailto:claws2627@gmail.com' },
   { icon: Phone,        label: 'Phone',    val: '+6019-5747073',            href: 'tel:+60195747073' },
   { icon: GitHubIcon,   label: 'GitHub',   val: 'github.com/Chiayingcy',    href: 'https://github.com/Chiayingcy' },
-  { icon: LinkedInIcon, label: 'LinkedIn', val: 'ooi-chia-ying-9ba7031b7', href: 'https://www.linkedin.com/in/ooi-chia-ying-9ba7031b7/' },
+  { icon: LinkedInIcon, label: 'LinkedIn', val: 'Chia Ying', href: 'https://www.linkedin.com/in/ooi-chia-ying-9ba7031b7/' },
 ]
 
 export function ContactSection() {
   return (
     <section id="contact" className="container-shell section-pad section-topline">
       <FadeUp>
-        <SectionHeader num="06" title="Get in" accent="touch" />
+        <SectionHeader num="07" title="Get in" accent="touch" />
       </FadeUp>
 
       <div className="grid items-center gap-6 md:grid-cols-2 md:gap-8">

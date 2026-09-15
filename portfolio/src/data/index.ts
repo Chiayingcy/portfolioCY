@@ -59,30 +59,31 @@ export const EXPERIENCES: Experience[] = [
     role: 'Junior Full Stack Developer',
     subtitle: 'Fintech · Blockchain · Web Apps',
     bullets: [
-      'Led the rebuild of a university certification system into BlockchainCert — now used by 100+ universities nationwide',
-      'Upgraded a legacy codebase to a modern Laravel + React stack, making it faster and easier to maintain',
-      'Built a drag-and-drop certificate editor (like Canva) for designing and issuing digital certificates',
-      'Worked on MyKapital, a regulated investment platform handling real investor accounts and approval workflows',
-      'Tuned app performance to handle 1000+ users at the same time without slowdowns',
-      'Set up and maintained automated deployment pipelines for consistent, low-risk releases',
-      'Worked in an Agile team — daily standups, sprint planning, and close collaboration across functions',
+      'Led the revamp of a legacy education platform into BlockchainCert — a blockchain-based certification system now adopted by 100+ universities nationwide',
+      'Migrated the legacy Yii system to a modern Laravel + React stack, improving performance, maintainability, and scalability',
+      'Designed and built a Canva-style certificate editor, enabling customizable digital certificate creation',
+      'Contributed to MyKapital, an investment platform covering primary and secondary markets under SC & BNM-regulated schemes',
+      'Optimized application performance to support 1,000+ concurrent active users',
+      'Ensured seamless front-end and back-end integration, reducing system errors and improving reliability',
+      'Implemented and supported CI/CD pipelines using Jenkins, reducing manual deployment effort',
+      'Participated in Agile practices — sprint planning, daily stand-ups, and cross-functional collaboration',
     ],
     tags: ['Laravel', 'Vue.js', 'React', 'PHP', 'MySQL', 'Maschain', 'Docker', 'Jenkins', 'Tailwind CSS'],
   },
   {
-    id: 'trading',
-    period: 'Sep 2024',
-    company: 'FundingPips & AlphaCapitalGroup',
-    companyShort: 'FundingPips · AlphaCapital',
-    role: 'Certified Trader — Prop Evaluation',
-    subtitle: 'Proprietary Trading · Risk Management',
+    id: 'ujilari',
+    period: 'Mar 2026 – May 2026',
+    company: 'Ujilari Studio',
+    companyShort: 'Ujilari Studio · Remote',
+    role: 'Full Stack Developer, Part Time',
+    subtitle: 'Remote · Short-Term Contract',
     bullets: [
-      'Passed professional trading evaluations with strict rules on risk and maximum allowed loss',
-      'Used a rule-based approach — no guessing, just reading chart patterns and key price levels',
-      'Stayed disciplined under pressure and kept results consistent across different market conditions',
-      'Made quick decisions based on data, not emotion — a habit that carries into how I build software',
+      'Provided IT support and troubleshooting for internal systems',
+      'Assisted with system administration and maintenance',
+      'Handled minor system configuration and improvements',
+      'Provided development support and coding tasks for PruBSN Takaful Crowd and REDI',
     ],
-    tags: ['XAUUSD', 'EURUSD', 'GBPUSD', 'CFD Trading', 'Risk Management', 'Price Action'],
+    tags: ['IT Support', 'System Administration', 'Troubleshooting', 'Development Support'],
   },
   {
     id: 'veecotech',
@@ -112,60 +113,110 @@ export const EXPERIENCES: Experience[] = [
     ],
     tags: ['Software Testing', 'Arduino', 'IT Support'],
   },
+  {
+    id: 'zeppy',
+    period: 'Dec 2019 – Mar 2020',
+    company: 'Zeppy Sdn. Bhd.',
+    companyShort: 'Zeppy',
+    role: 'Part-Time E-Commerce Coordinator',
+    subtitle: 'E-Commerce · Shopee Operations',
+    bullets: [
+      'Managed Shopee order processing and coordination',
+      'Designed product photos for online listings',
+      'Researched and translated product descriptions into English',
+    ],
+    tags: ['E-Commerce', 'Shopee', 'Product Content'],
+  },
 ]
 
 export const PROJECTS: Project[] = [
+  {
+    id: 'blockchaincert',
+    title: 'BlockchainCert',
+    type: 'work',
+    category: 'Work · Masverse',
+    description:
+      'A blockchain-based certification system adopted by 100+ universities. Migrated the legacy Yii system to Laravel and React, built a customizable certificate editor, and optimized the system to support 1,000+ concurrent users.',
+    highlights: [
+      'Migrated the legacy Yii system to a modern Laravel + React stack',
+      'Built a drag-and-drop certificate editor for customizable digital certificate design',
+      'Implemented blockchain-based certificate verification for tamper-proof, publicly verifiable credentials',
+      'Optimized the platform to support 1,000+ concurrent users',
+    ],
+    outcomes: [
+      'Adopted by 100+ universities',
+      'Supports 1,000+ concurrent users',
+    ],
+    architecture: [
+      'React-based editor with reusable drag-and-resize components',
+      'Laravel API handling certificate issuance, verification, and role-based access',
+      'Blockchain hash verification for independent certificate authenticity checks',
+    ],
+    tags: ['Laravel', 'React', 'Yii', 'Maschain', 'Blockchain'],
+    link: 'https://www.blockchaincert.my/',
+    images: [
+      { src: '/projects/BlockchainCert/organisation-dashboard.png', alt: 'BlockchainCert organisation dashboard' },
+      { src: '/projects/BlockchainCert/template-designer.png', alt: 'BlockchainCert certificate template designer' },
+      { src: '/projects/BlockchainCert/cert.png', alt: 'BlockchainCert issued certificate detail view' },
+    ],
+  },
+  {
+    id: 'maschain',
+    title: 'MasChain',
+    type: 'work',
+    category: 'Work · Masverse',
+    description:
+      'Blockchain infrastructure integrated across Masverse products for wallet management and on-chain verification, used within BlockchainCert and MyKapital.',
+    highlights: [
+      'Maintained and debugged the services layer to keep wallet and verification flows stable',
+      'Improved UI usability and consistency across MasChain-integrated screens',
+    ],
+    tags: ['Maschain', 'Blockchain'],
+    link: 'https://maschain.com/',
+  },
   {
     id: 'mykapital',
     title: 'MyKapital',
     type: 'work',
     category: 'Work · Masverse',
     description:
-      'A regulated investment platform where real investors buy and sell securities. I worked on onboarding, identity verification, bulk data handling, blockchain wallet integration, and multi-step approval processes.',
+      'An investment platform involving primary and secondary markets. I contributed to onboarding, identity verification, bulk data handling, blockchain wallet integration, and multi-step approval processes.',
     highlights: [
-      'Bulk investor import with validation and a safe preview mode before committing changes',
-      'Multi-step approval workflow with a full audit trail for every action taken',
-      'Blockchain wallet integration built to handle failures gracefully and retry reliably',
-      'Database performance fixes that cut query load significantly on busy pages',
+      'Built bulk investor import with validation and a safe preview before committing changes',
+      'Contributed to multi-step approval workflows with an audit trail for each action',
+      'Integrated blockchain wallet processing with failure handling and reliable retries',
+      'Optimized database queries on high-traffic pages',
     ],
     outcomes: [
-      'Platform handles 1000+ users at the same time without slowdowns',
-      'Fewer data errors thanks to structured approval and verification flows',
-      'More confident deployments — wallet jobs retry cleanly and never double-process',
+      'Supported a platform handling 1,000+ users concurrently',
+      'Reduced data errors through structured approval and verification flows',
     ],
     architecture: [
       'Laravel service modules with background job queues for wallet processing',
-      'State machine for multi-step approvals with traceability at every step',
-      'MySQL queries optimised with proper joins and indexes on high-traffic pages',
+      'MySQL queries optimized with joins and indexes on high-traffic pages',
     ],
     tags: ['Laravel', 'Vue.js', 'Maschain', 'MySQL', 'Docker'],
     link: 'https://mykapital.my/',
+    images: [
+      { src: '/projects/MyKapital/dashboard.png', alt: 'MyKapital admin dashboard' },
+      { src: '/projects/MyKapital/scheme.png', alt: 'MyKapital scheme management' },
+      { src: '/projects/MyKapital/interest-payout.png', alt: 'MyKapital interest payout module' },
+    ],
   },
   {
-    id: 'bcc',
-    title: 'BlockchainCert (BCC)',
+    id: 'agent-system',
+    title: 'Agent System',
     type: 'work',
     category: 'Work · Masverse',
     description:
-      'A blockchain-powered certificate system used by 100+ universities to issue and verify digital certificates. I helped rebuild it from the ground up — new drag-and-drop editor, modern codebase, and on-chain verification.',
+      'A platform for creating products and agents, with configurable commission levels across an agent hierarchy. Agents can request payouts and track their sales within the system.',
     highlights: [
-      'Drag-and-drop certificate editor so staff can design templates without touching code',
-      'Certificates stored on blockchain — tamper-proof and publicly verifiable',
-      'Full codebase migration to a cleaner, modern stack (Laravel + React)',
-      'Rolled out to 100+ institutions nationwide',
+      "Built an API to retrieve an agent's related products by agent key",
+      "Integrated the API into MyKapital to call each agent's related agent list",
+      'Enabled admins to configure different discount rates per agent within the scheme',
     ],
-    outcomes: [
-      'Over 100 universities now issue verifiable digital certificates through the platform',
-      'Modernised a slow, hard-to-maintain codebase into something the team can move fast with',
-      'Staff spend less time on manual certificate work — most of it is automated now',
-    ],
-    architecture: [
-      'React editor with reusable drag-and-resize components',
-      'Laravel API handling issuance, verification, and role-based access',
-      'Blockchain hash verification so any certificate can be independently checked',
-    ],
-    tags: ['React', 'Laravel', 'Maschain', 'Blockchain'],
-    link: 'https://www.blockchaincert.my/',
+    tags: [],
+    link: 'https://agentsystem.io',
   },
   {
     id: 'tradebotx',
@@ -204,6 +255,7 @@ export const PROJECTS: Project[] = [
     description:
       'Tracking tool for prop firm challenge performance — monitors drawdown, consistency scores, and key metrics during evaluation phases.',
     tags: ['JavaScript', 'Dashboard', 'Prop Firm'],
+    link: 'https://prop.claws27.xyz/view',
   },
   {
     id: 'tg-forward',
@@ -279,8 +331,8 @@ export const EDUCATION: Education[] = [
   {
     year: '2023',
     degree: 'Bachelor of Science (Hons) in Computer Science',
-    institution: 'Coventry University / INTI International College Penang · 3+0',
-    detail: 'Upper Second Class Honours',
+    institution: 'Coventry University / INTI International College Penang',
+    detail: 'Upper Second Class',
   },
   {
     year: '2021',
@@ -290,11 +342,12 @@ export const EDUCATION: Education[] = [
   },
 ]
 
-export const COURSES: Course[] = [
-  { date: 'Jun 2025', name: 'AI Automation with GenAI (Chatbot)', org: 'KLA Consultancy Sdn. Bhd.' },
+export const CERTIFICATES: Course[] = [
+  { date: 'Jun 2025', name: 'AI Automation with Gen-AI Chatbot', org: 'KLA Consultancy Sdn. Bhd.' },
   { date: 'Jun 2025', name: 'Kickstart Automation: Selenium with Python', org: 'Profound Source Sdn. Bhd.' },
-  { date: 'Apr 2024', name: 'Exploring Web3 — Navigating the Decentralised Internet', org: 'Masverse Sdn. Bhd.' },
-  { date: 'Academic', name: 'Ideal Vision Image Screening & Segregation', org: 'INTI International College Penang' },
+  { date: 'Apr 2024', name: 'Exploring Web 3: Understanding and Navigating the Decentralised Future of the Internet', org: 'Masverse Sdn. Bhd.' },
+  { date: 'Academic', name: 'Ideal Vision Image Screening and Segregation Project', org: 'INTI International College Penang' },
+  { date: 'Sep 2024', name: 'Proprietary Trading Evaluation — Certified Trader', org: 'FundingPips & AlphaCapitalGroup' },
 ]
 
 export const TICKER_ITEMS = [

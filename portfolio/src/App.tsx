@@ -6,6 +6,7 @@ import { AboutSection } from '@/components/sections/AboutSection'
 import { ExperienceSection } from '@/components/sections/ExperienceSection'
 import { ProjectsSection } from '@/components/sections/ProjectsSection'
 import { TradingSection } from '@/components/sections/TradingSection'
+import { CertificatesSection } from '@/components/sections/CertificatesSection'
 import { EducationSection } from '@/components/sections/EducationSection'
 import { ContactSection } from '@/components/sections/ContactSection'
 
@@ -31,6 +32,7 @@ export default function App() {
         <ExperienceSection />
         <ProjectsSection />
         <TradingSection />
+        <CertificatesSection />
         <EducationSection />
         <ContactSection />
       </main>

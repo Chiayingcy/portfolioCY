@@ -10,6 +10,7 @@ export interface Project {
   tags: string[]
   link?: string
   github?: string
+  images?: { src: string; alt: string }[]
 }
 
 export interface ImpactMetric {
